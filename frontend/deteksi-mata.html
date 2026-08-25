@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deteksi Mata – Medical-AI</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <span class="topbar-item" id="topbar-date">📅 –</span>
+        <span class="topbar-divider"></span>
+        <span class="topbar-item" id="topbar-time">🕒 –</span>
+      </div>
+      <div class="topbar-right">
+        <span class="topbar-item">Admin 👤 ⌄</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER / LOGO -->
+  <header class="site-header">
+    <a href="index.html" class="logo-wrap">
+      <span class="logo-badge">🩺</span>
+      <div style="text-align:left;">
+        <h1>Medical-AI <span style="font-weight:400;">Oftalmologi</span></h1>
+        <span class="tag">CGANT · Universitas Jember</span>
+      </div>
+    </a>
+  </header>
+
+  <!-- NAVBAR -->
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="index.html#statistic">STATISTIC</a></li>
+      <li><a href="index.html#alur">ALUR</a></li>
+      <li><a href="index.html#testimonial">TESTIMONIAL</a></li>
+      <li class="has-children active">
+        <a href="#cnn">CNN ▾</a>
+        <ul class="sub-menu">
+          <li><a href="deteksi-mata.html">DETEKSI MATA</a></li>
+          <li><a href="#">DETEKSI GIGI</a></li>
+          <li><a href="#">DETEKSI KULIT</a></li>
+        </ul>
+      </li>
+      <li class="has-children">
+        <a href="#bcoloring">B-COLORING ▾</a>
+        <ul class="sub-menu">
+          <li><a href="#">REKOMENDASI PENYAKIT MATA</a></li>
+          <li><a href="#">REKOMENDASI PENYAKIT GIGI</a></li>
+          <li><a href="#">REKOMENDASI PENYAKIT KULIT</a></li>
+        </ul>
+      </li>
+      <li><a href="#login">LOGIN</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN PAGE -->
+  <section class="medai-page">
+
+    <div class="breadcrumb"><a href="index.html">Home</a> / CNN / Deteksi Mata</div>
+
+    <div class="section-title">
+      <h2>👁️ Deteksi Penyakit Mata dengan CNN</h2>
+      <p>Unggah citra fundus mata (JPG/PNG). Model CNN akan mengklasifikasikan ke salah satu
+      dari 4 kelas: katarak, retinopati diabetik, glaukoma, atau normal.</p>
+    </div>
+
+    <div class="predict-layout">
+
+      <!-- FORM UPLOAD -->
+      <div class="predict-panel">
+        <h3>Unggah Citra Fundus</h3>
+        <p class="hint">Format didukung: JPG, JPEG, PNG.</p>
+
+        <div class="upload-box" id="drop-zone">
+          <input id="eye-file-upload" type="file" accept="image/png, image/jpeg">
+          <label for="eye-file-upload" class="upload-content">
+            <span class="upload-icon">👁️📷</span>
+            <strong id="upload-label">Klik atau seret foto mata ke sini</strong>
+            <span>Dari kamera HP atau galeri · JPG, PNG</span>
+          </label>
+        </div>
+
+        <div class="eye-preview" id="eye-preview">
+          <img id="eye-preview-img" alt="Pratinjau citra mata">
+        </div>
+
+        <button class="predict-btn" id="predict-btn" disabled>Prediksi Sekarang</button>
+
+        <div class="api-url-row">
+          <span>API:</span>
+          <input type="text" id="api-url" value="http://127.0.0.1:8000/predict">
+        </div>
+      </div>
+
+      <!-- HASIL -->
+      <div class="result-panel" id="result-panel">
+        <div class="result-empty" id="result-empty">
+          <span class="icon">🧠</span>
+          Hasil klasifikasi akan muncul di sini setelah gambar diunggah dan tombol
+          "Prediksi Sekarang" ditekan.
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <h4>Location</h4>
+        <p>
+          Universitas PGRI Argopuro Jember (UNIPAR)<br>
+          Jl. Jawa No.10, Tegal Boto Lor,<br>
+          Sumbersari, Kec. Sumbersari, Kabupaten Jember, Jawa Timur 68121
+        </p>
+      </div>
+      <div>
+        <h4>Tentang</h4>
+        <p>Medical-AI adalah riset unggulan Universitas Jember di bidang deteksi<br>
+        penyakit multidisiplin berbasis AI dan blockchain.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>Powered by <a href="#">UNIPAR</a> | Designed by <a href="#">Admin</a></div>
+      <div>© Copyright 2026, All Rights Reserved</div>
+    </div>
+  </footer>
+
+  <script src="js/deteksi-mata.js"></script>
+</body>
+</html>
