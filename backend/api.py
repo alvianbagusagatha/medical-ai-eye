@@ -22,14 +22,6 @@ from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from PIL import Image, UnidentifiedImageError
 
-from fastapi.middleware.cors import CORSMiddleware
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["https://medical-ai-eye.vercel.app"],
-    allow_methods=[""],
-    allow_headers=[""],
-)
-
 from eye_cnn import CLASSES
 from eye_cnn.data import build_transforms
 from eye_cnn.models import build_model
@@ -50,7 +42,7 @@ app = FastAPI(title="Medical-AI Eye Classifier API")
 # server statis terpisah di port lain). Persempit allow_origins di produksi.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["https://medical-ai-eye.vercel.app"],
     allow_methods=["*"],
     allow_headers=["*"],
 )

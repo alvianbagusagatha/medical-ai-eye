@@ -1,5 +1,8 @@
-streamlit>=1.32,<2
+fastapi>=0.110,<1
+uvicorn[standard]>=0.29,<1
+python-multipart>=0.0.9,<1
 numpy>=1.26,<3
 Pillow>=10,<13
+--extra-index-url https://download.pytorch.org/whl/cpu
 torch>=2.2,<3
 torchvision>=0.17,<1
