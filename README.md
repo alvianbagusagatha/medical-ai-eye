@@ -79,9 +79,15 @@ Lalu buka `http://127.0.0.1:5500/index.html`, klik menu
 
 ## Catatan
 
-- `CORSMiddleware` di `api.py` diset `allow_origins=["*"]` supaya mudah
-  saat pengembangan lokal. Persempit ke domain frontend kamu sebelum
-  dipakai di server publik/produksi.
+- `CORSMiddleware` di `api.py` mendaftarkan origin secara eksplisit:
+  domain produksi (Vercel) plus `http://localhost:5500` dan
+  `http://127.0.0.1:5500` untuk server statis lokal di langkah 2.
+  Kalau frontend dijalankan di port lain, tambahkan origin itu ke daftar
+  `allow_origins` - kalau tidak, browser akan menolak dengan
+  "Failed to fetch" walau `curl` ke endpoint yang sama berhasil (curl
+  tidak mengirim header `Origin`, jadi CORS tidak berlaku padanya).
+- Membuka halaman lewat `file://` tidak akan bisa memanggil API, karena
+  origin `null` tidak bisa didaftarkan. Selalu pakai server statis.
 - Disclaimer medis sudah ditampilkan otomatis di bawah hasil prediksi
   pada halaman Deteksi Mata — ini bukan diagnosis resmi.
 - Untuk menambahkan **Deteksi Gigi** / **Deteksi Kulit** nanti, pola yang

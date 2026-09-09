@@ -38,11 +38,17 @@ LABEL_ID = {
 
 app = FastAPI(title="Medical-AI Eye Classifier API")
 
-# Dibuka untuk semua origin karena front-end adalah file statis (file:// atau
-# server statis terpisah di port lain). Persempit allow_origins di produksi.
+# Front-end produksi di Vercel, ditambah origin server statis lokal untuk
+# pengembangan (lihat README: python -m http.server 5500 di folder frontend).
+# CORS hanya berlaku di browser - curl tidak mengirim header Origin, jadi
+# endpoint ini tetap bisa diuji lewat curl walau origin-nya tidak terdaftar.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://medical-ai-eye.vercel.app"],
+    allow_origins=[
+        "https://medical-ai-eye.vercel.app",
+        "http://localhost:5500",
+        "http://127.0.0.1:5500",
+    ],
     allow_methods=["*"],
     allow_headers=["*"],
 )
