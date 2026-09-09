@@ -1,0 +1,5 @@
+actual/predicted,cataract,diabetic_retinopathy,glaucoma,normal
+cataract,143,0,9,4
+diabetic_retinopathy,1,131,2,31
+glaucoma,24,2,90,35
+normal,7,4,16,134

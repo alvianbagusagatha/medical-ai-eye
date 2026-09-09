@@ -1,0 +1,43 @@
+{
+  "accuracy": 0.7867298578199052,
+  "macro_precision": 0.7998601877584274,
+  "macro_recall": 0.7847326718295621,
+  "macro_f1": 0.7843715934074986,
+  "per_class_precision": [
+    0.8171428571428572,
+    0.9562043795620438,
+    0.7692307692307693,
+    0.6568627450980392
+  ],
+  "per_class_recall": [
+    0.9166666666666666,
+    0.793939393939394,
+    0.5960264900662252,
+    0.8322981366459627
+  ],
+  "per_class_f1": [
+    0.8640483383685802,
+    0.8675496688741723,
+    0.6716417910447762,
+    0.7342465753424658
+  ],
+  "support": [
+    156,
+    165,
+    151,
+    161
+  ],
+  "classes": [
+    "cataract",
+    "diabetic_retinopathy",
+    "glaucoma",
+    "normal"
+  ],
+  "best_epoch": 5,
+  "best_val_macro_f1": 0.7396225263879427,
+  "model": "eyecnn",
+  "parameters": 2807108,
+  "device": "cpu",
+  "evaluated_split": "test",
+  "manifest": "artifacts\\manifest.csv"
+}
