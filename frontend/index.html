@@ -11,9 +11,9 @@
     <div class="topbar">
       <div class="topbar-inner">
         <div class="topbar-left">
-          <span class="topbar-item">📅 Sunday, 23 August 2026</span>
+          <span class="topbar-item" id="topbar-date">📅 –</span>
           <span class="topbar-divider"></span>
-          <span class="topbar-item">🕒 15:59 WIB</span>
+          <span class="topbar-item" id="topbar-time">🕒 –</span>
         </div>
         <div class="topbar-right">
           <span class="topbar-item">Admin 👤 ⌄</span>
@@ -26,8 +26,9 @@
       <a href="#" class="logo-wrap">
         <img src="image/Header Medical.png" class="logo-img" alt="CGANT Logo" />
 
-        <div style="text-align: left">
-          <h1>Medical-AI <span style="font-weight: 400">Oftalmologi</span></h1>
+        <div class="logo-caption">
+          <h1>Medical-AI <span>Oftalmologi</span></h1>
+          <span class="caption-sep" aria-hidden="true"></span>
           <span class="tag">CGANT · Universitas Jember</span>
         </div>
       </a>
@@ -35,7 +36,16 @@
 
     <!-- NAVBAR -->
     <nav class="main-nav">
-      <ul>
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+      >
+        <span class="bars" aria-hidden="true"></span>
+        Menu
+      </button>
+      <ul id="nav-menu">
         <li class="active"><a href="#home">HOME</a></li>
         <li><a href="#statistic">STATISTIC</a></li>
         <li><a href="#alur">ALUR</a></li>
@@ -293,5 +303,6 @@
         });
       }
     </script>
+    <script src="js/site.js"></script>
   </body>
 </html>

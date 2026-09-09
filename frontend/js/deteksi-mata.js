@@ -1,27 +1,5 @@
-// ===== Topbar tanggal & jam berjalan =====
-function updateTopbarClock() {
-  const now = new Date();
-  const dateEl = document.getElementById("topbar-date");
-  const timeEl = document.getElementById("topbar-time");
-  if (dateEl) {
-    dateEl.textContent =
-      "📅 " +
-      now.toLocaleDateString("en-GB", {
-        weekday: "long",
-        day: "2-digit",
-        month: "long",
-        year: "numeric",
-      });
-  }
-  if (timeEl) {
-    timeEl.textContent =
-      "🕒 " +
-      now.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" }) +
-      " WIB";
-  }
-}
-updateTopbarClock();
-setInterval(updateTopbarClock, 30000);
+// Jam topbar, menu ponsel, animasi scroll, dan drag-and-drop
+// ditangani bersama di js/site.js.
 
 // ===== Elemen ===== 
 const fileInput = document.getElementById("eye-file-upload");
