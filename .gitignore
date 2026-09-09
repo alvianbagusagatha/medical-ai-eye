@@ -1,0 +1,21 @@
+# Virtual environment (berisi torch, ukurannya GB)
+backend/.venv/
+.venv/
+
+# Cache Python
+__pycache__/
+*.py[cod]
+
+# Dataset citra fundus (4.217 gambar) - diunduh terpisah, jangan masuk git.
+# Struktur yang diharapkan: backend/data/<nama_kelas>/*.jpg
+# Regenerasi manifest: python make_manifest.py --data-dir data
+backend/data/
+
+# Manifest hasil generate dari dataset di atas
+backend/artifacts/
+
+# Checkpoint hasil training (ResNet18 ~45 MB, terlalu besar untuk git biasa).
+# backend/runs/eyecnn/best_model.pt sudah terlacak sejak commit awal, jadi
+# aturan ini hanya mencegah checkpoint run baru ikut ter-commit.
+backend/runs/*/best_model.pt
+!backend/runs/eyecnn/best_model.pt
